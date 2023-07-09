@@ -1,0 +1,804 @@
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Lora:ital,wght@0,400;0,700;1,400;1,500;1,600&family=Open+Sans:ital,wght@0,400;0,500;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;1,600&display=swap');
+
+.App {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+.header {
+  background-color: #003580;
+  color: #fff;
+  padding: 20px;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+.title {
+  margin-top: 10px;
+}
+
+.content {
+  margin-top: 30px;
+}
+
+.services {
+  font-family:"Poppins",sans-serif;
+  background-color: rgb(177, 231, 248);
+  padding: 20px;
+}
+
+.services h2 {
+  color: #003580;
+}
+
+.services ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.services li {
+  background-color: white;
+  font-weight: 500;
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid #003580;
+  border-radius: 5px;
+  width: 150px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.services li:hover {
+  background-color: #003580;
+  color: #fff;
+}
+
+
+.featured {
+  padding: 20px;
+  margin-top: 50px;
+  background-color: #f2f2f2;
+}
+
+.featured h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.offer-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.offer-image {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.offer-details h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #003580;
+}
+.offer-details p {
+  margin-top: 0;
+  color: #666666;
+}
+
+.footer {
+  margin-top: 50px;
+  padding: 10px;
+  background-color: #003580;
+  color: #fff;
+}
+
+.book-trains {
+  background-color: #f5f5f5;
+  padding: 20px;
+  
+}
+
+.book-trains h2 {
+  color: #003580;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  /* background: rgb(177, 231, 248) */
+}
+
+.input-group input,
+.input-group select {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+  height: 50px;
+}
+
+.input-group input[type="date"] {
+  width: 270px;
+}
+
+.input-group button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #003580;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.input-group button:hover {
+  background-color: #002250;
+}
+
+/* Style the drop-down options */
+.input-group select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='%23003580' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z'/%3E%3C/svg%3E")
+    no-repeat right 10px center;
+  background-size: 14px;
+}
+
+.input-group select::-ms-expand {
+  display: none;
+}
+
+/* Basic table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #003580;
+  font-weight: bold;
+  color:white
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Hover effect on rows */
+tr:hover {
+  background-color: #e0e0e0;
+}
+
+
+/* Reset some default styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.MyNavbar {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Center the navbar items horizontally */
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(61, 147, 176);
+  padding: 10px;
+  font-size: 18px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  margin-left: 150px;
+  font-weight: 100;
+}
+
+.navbar li {
+  margin: 0 10px;
+  margin-top: 10px;
+  text-align: center;
+
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  padding: 8px 16px;
+  transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+  background-color: #002250;
+}
+
+/* Style the active link, if needed */
+.navbar a.active {
+  background-color: #002250;
+}
+
+/* Position the right items on the navbar */
+.right-items {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  font-weight: 100;
+}
+
+/* Style the "My Account" dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  background-color: #003580;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #003580;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #003580;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Style the "Contact Us" and "Alert" items */
+.right-items a {
+  text-decoration: none;
+  color: #fff;
+  padding: 8px 16px;
+  transition: background-color 0.3s;
+}
+
+.right-items a:hover {
+  background-color: #002250;
+}
+
+/* Apply red CSS to the "Alert" item */
+.right-items .alert {
+  background-color: red;
+}
+
+
+/* Homepage CSS */
+/* App.css */
+
+/* App.css */
+
+.MyHomepageNavbar {
+  background-color: transparent;
+  font-family: 'Poppins',sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+  
+}
+
+.hpnavbar ul {
+  list-style-type: none;
+  margin-left: 40px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:4rem;
+}
+
+.hpnavbar li {
+  margin-right: 10px;
+}
+
+.hpnavbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.hpnavbar a:hover {
+  color: white;
+}
+
+.hpnavbar a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.hpnavbar a:hover::after {
+  transform: scaleX(1);
+}
+.hpnavbar svg {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+
+
+.homepageimage{
+  background-repeat: no-repeat;
+  font-family: 'Poppins',sans-serif;
+  color:black;
+  font-size: 18px;
+  background-position: top center;
+  background-size    : cover;
+  width: 100%;
+  height: 100vh;
+  margin-top:-11vh;
+  background-image: url('https://images.unsplash.com/photo-1502726488490-f99c74217a37?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+}
+
+.homepageimage h2 {
+  font-size: 34px;
+  padding-top: 25vh;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-left: 10vh;
+  
+}
+
+.homepageimage p {
+  margin-left: 10vh;
+  font-size: 20px;
+  line-height: 1.5;
+  max-width: 100vh;
+}
+.button{
+  color:white;
+  background-color: transparent;
+  font-family: "Poppins",sans-serif;
+  font-size: 20px;
+  padding: 10px 10px;
+  cursor:pointer;
+  transform: translate(120%,20%);
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+/* Services CSS */
+
+.Services{
+  width:100%;
+  height: 100vh;
+  font-family: 'Poppins',sans-serif;  
+  background: linear-gradient(to bottom, rgb(233, 250, 255), #ffffff);
+;
+}
+
+.Services h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10vh;
+  font-size: 5vh;
+}
+
+.rightseccontent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+}
+
+.rightseccontent img{
+  transform: scale(1.8);
+  margin-left: 25vh;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.rightseccontent img:hover {
+  transform: scale(2);
+}
+
+
+.feature{
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border:2px solid black;
+  width: 500px;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.feature:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+.feature:last-child {
+  margin-bottom: 0;
+}
+
+.feature h3 {
+  margin-bottom: 10px;
+}
+
+.rightseccontent img {
+  width: 100%;
+  max-height: 300px;
+}
+
+.leftseccontent{
+  margin-top: 10vh;
+  text-align: center;
+  margin-left: 40vh;
+  transition: transform 0.3s ease;
+}
+
+/* Footer CSS */
+
+/* Footer.css */
+
+/* Footer.css */
+
+.homefooter {
+  background-color: #333333;
+  padding: 20px;
+  color: #ffffff;
+  font-family: 'Poppins',sans-serif;
+  font-size: 16px;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.icon {
+  font-size: 24px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+
+
+.email-input input {
+  padding: 10px;
+  border-radius: 4px;
+  margin-right: 5px;
+  border: none;
+  width: 200px;
+}
+
+
+
+.footer-text {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.destimage{
+ 
+  margin-left: 10vh;
+  display: flex;
+  
+}
+
+.card-image{
+  transform: scale(0.75);
+  margin-left: -8vh;
+  transition: transform 0.3s ease;
+}
+
+.card-image:hover {
+  transform: scale(0.8);
+}
+
+.card{
+  margin-right: -6vh;
+  
+  
+}
+
+
+.card-content{
+  margin-top: -8vh;
+}
+
+.card-content p{
+  padding-top: 5vh;
+  width: 300px;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .card-content p {
+  opacity: 0.8;
+}
+
+.mainrailwaybanner img{
+  background-repeat: no-repeat;
+  background-size    : cover;
+  margin-top: -2vh;
+  
+
+}
+
+.specialselection{
+  margin-top: 5vh;
+  margin-left: -3vh;
+  gap:5rem;
+}
+
+.railwayleft{
+  font-family: 'Poppins',sans-serif;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 80vh;
+  margin-top: -2vh;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  
+}
+
+.railwayleft label{
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #003580;
+
+}
+
+input,
+select {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #003580;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #002250;
+}
+
+.checkbox-group {
+  margin-bottom: 10px;
+}
+
+.checkbox-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+
+/* NFTS MARKETPLACE */
+
+/* App.css */
+
+
+
+.header {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.search-bar {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  padding: 5px;
+  justify-content: center; 
+  transform: translate(50%);
+  transition: box-shadow 0.3s ease;
+}
+
+
+.search-bar:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-icon {
+  margin-right: 5px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  width: 100vh;
+  border: 2px solid black;
+  font-family: 'Poppins';
+  border-radius: 10px;
+  margin-left:-4vh;
+  
+}
+
+.sidebar {
+  background-color: #f2f2f2;
+  width: 350px;
+  height: 87vh;
+  padding: 10px;
+  font-size: 20px;
+  padding-top: 5vh;
+  color: #003580;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.menu li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  cursor: pointer;
+  margin-left: 20px;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.menu li:hover {
+  background-color: white;
+  
+}
+
+.menu-icon {
+  margin-right: 10px;
+}
+
+.account-details {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+.account-menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.account-menu li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+
+}
+
+.account-menu li:hover {
+  background-color: white;
+}
+
+.account-icon {
+  margin-right: 10px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background: url('https://cdn.dribbble.com/userupload/6572519/file/original-06bc48439b5de669ba9105bd659a0336.png?compress=1&resize=1200x745');
+  height: 60vh;
+  border-radius: 20px;
+  background-size: cover;
+  
+  margin-top: -5.5vh;
+  transform: scale(0.80);
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.main-content h1{
+  color: white;
+  text-align: center;
+}
+
+.nft-container {
+  margin-left: 0vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.nft-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.nft-card img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.nft-card h3 {
+  margin-top: 10px;
+}
+
+.nft-card p {
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
