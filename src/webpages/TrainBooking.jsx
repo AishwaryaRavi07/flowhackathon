@@ -4,8 +4,10 @@ import {MdLocationOn} from 'react-icons/md';
 import {FaCalendarAlt} from 'react-icons/fa';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { useNavigate } from 'react-router-dom';
 
 function TrainBooking() {
+  const navigate=useNavigate();
   const [source, setSource] = useState('');
   const [destination, setDestination] = useState('');
   const [date, setDate] = useState('');
@@ -14,16 +16,7 @@ function TrainBooking() {
   const [selectedFareType, setSelectedFareType] = useState('Regular');
   const [trainSchedule, setTrainSchedule] = useState([]);
 
-  const [selectedDate, setSelectedDate] = useState(null);
-
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
-
-  const handleSubmit = (props) => {
-
-    setSelectedDate('');
-  };
+  
 
   const API= async()=>{
 
@@ -57,99 +50,9 @@ function TrainBooking() {
   return (
     <>
     <Navbar/>
-    <div className="App">
-      <div className='mainrailwaybanner' style={{display:"flex",gap:"1rem"}}>
-        <div className='railwayleft'>
-        <div>
-        <div>
-  <h1 style={{ textAlign: "center",color:"#003580" }}>Welcome to the Railway Ticketing Platform!</h1>
-  <form style={{ marginTop: "6vh" }} onSubmit={handleSubmit}>
-    <table>
-      <tbody>
-        <tr>
-          <td>
-            <label>Trip Type:</label>
-          </td>
-          <td>
-            <select required>
-              <option value="">Select trip type</option>
-              <option value="oneWay">One-way</option>
-              <option value="roundTrip">Round trip</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label>Number of Members:</label>
-          </td>
-          <td>
-            <input
-              type="number"
-              min="1"
-              required
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label>Select Date of Journey:</label>
-          </td>
-          <td>
-            <DatePicker
-              selected={selectedDate}
-              onChange={handleDateChange}
-              dateFormat="dd/MM/yyyy"
-              minDate={new Date()}
-              placeholderText="Select a date"
-              className="date-picker"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label>Facilities:</label>
-          </td>
-          <td>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  value="food"
-                />
-                Food
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  value="wifi"
-                />
-                Wi-Fi
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  value="entertainment"
-                />
-                Entertainment
-              </label>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <button type="submit">Submit</button>
-  </form>
-</div>
-</div>
-        </div>
-        <img src='./junction.png'></img>
-      </div>
-      <main className="content">
-        <section className="services">
+    
+      <main className="content" style={{textAlign:"center"}}>
+        {/* <section className="services">
           <h2>Our Services</h2>
           <ul>
             <li>Book Train Tickets</li>
@@ -157,7 +60,7 @@ function TrainBooking() {
             <li>Train Schedule</li>
             <li>Seat Availability</li>
           </ul>
-        </section>
+        </section> */}
         <section className="book-trains">
           <h2>Modify Search and Filter</h2>
           <div className="input-group">
@@ -254,7 +157,7 @@ function TrainBooking() {
                 <td>{train.data.departTime}</td>
                 <td>{train.data.arriveTime}</td>
                 <td>{train.data.classes.join(", ")}</td>
-                <td><button style={{backgroundColor:"#003580",color:"white",fontFamily:"poppins",borderRadius:"5px",cursor:"pointer",padding:"10px 20px"}}>Book Now</button></td>
+                <td><button style={{backgroundColor:"#003580",color:"white",fontFamily:"poppins",borderRadius:"5px",cursor:"pointer",padding:"10px 20px"}} onClick={()=>navigate('/payment')}>Book Now</button></td>
                 
               </tr>
             ))}
@@ -306,7 +209,7 @@ function TrainBooking() {
       <footer className="footer">
         <p>© {new Date().getFullYear()} IRCTC Railways</p>
       </footer>
-    </div>
+    
     
     
     

@@ -1,0 +1,25 @@
+{
+	"contracts": {
+		"TravToken": "./TravToken.cdc",
+		"TravTokenSTD": "./TravTokenSTD.cdc"
+	},
+	"networks": {
+		"emulator": "127.0.0.1:3569",
+		"mainnet": "access.mainnet.nodes.onflow.org:9000",
+		"sandboxnet": "access.sandboxnet.nodes.onflow.org:9000",
+		"testnet": "access.devnet.nodes.onflow.org:9000"
+	},
+	"accounts": {
+		"bkc": {
+			"address": "35da933bc4547fa5",
+			"key": {
+				"type": "file",
+				"location": "bkc.pkey"
+			}
+		},
+		"emulator-account": {
+			"address": "f8d6e0586b0a20c7",
+			"key": "8e3bb0a709ff37d31a8fda64e141468e0b0482f1d9b7cdb474edccf36aa82aad"
+		}
+	}
+}

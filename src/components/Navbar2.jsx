@@ -15,7 +15,7 @@ function Navbar2() {
         <SiYourtraveldottv style={{fontSize:"50px",color:"white"}}/>
           <li><a href="#home">Destination</a></li>
           <li><a href="#pnr-status">About Us</a></li>
-          <li><a href="/trainbook"> Trip Plan</a></li>
+          <li><a href="/railways"> Trip Plan</a></li>
           <li><a href="#services-promotions">Blog</a></li>
           <li><a href="#irctc-rwallet">FAQs</a></li>
         
