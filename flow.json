@@ -1,7 +1,7 @@
 {
 	"contracts": {
-		"TravToken": "./TravToken.cdc",
-		"TravTokenSTD": "./TravTokenSTD.cdc"
+		"NFTMarketplace": "src/components/contracts/NFTMarketplace.cdc",
+		"NFTravel": "src/components/contracts/NFTravel.cdc"
 	},
 	"networks": {
 		"emulator": "127.0.0.1:3569",
@@ -10,16 +10,16 @@
 		"testnet": "access.devnet.nodes.onflow.org:9000"
 	},
 	"accounts": {
-		"bkc": {
-			"address": "35da933bc4547fa5",
-			"key": {
-				"type": "file",
-				"location": "bkc.pkey"
-			}
-		},
 		"emulator-account": {
 			"address": "f8d6e0586b0a20c7",
-			"key": "8e3bb0a709ff37d31a8fda64e141468e0b0482f1d9b7cdb474edccf36aa82aad"
+			"key": "718467df1d6118fdd417ad01eca7dfb270d2e242fcf4d45f0eff8be0c7c55b0f"
+		},
+		"unmani-shinde": {
+			"address": "2003435419cf0c8c",
+			"key": {
+				"type": "file",
+				"location": "unmani-shinde.pkey"
+			}
 		}
 	}
 }
