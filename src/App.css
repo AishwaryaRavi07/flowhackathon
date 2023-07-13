@@ -212,6 +212,24 @@ tr:hover {
   padding: 20px;
 }
 
+@media screen and (max-width:1240px) {
+  .navbar-right{
+    margin-left: -42vh;
+    
+  }
+  .button{
+    margin-right:-15vh ;
+  }
+  
+}
+
+@media screen and (max-width:1240px) {
+  .navbar{
+    margin-left: -30vh;
+  }
+  
+}
+
 /* Center the navbar items horizontally */
 .navbar {
   display: flex;
@@ -243,7 +261,9 @@ tr:hover {
 }
 
 .navbar a:hover {
-  background-color: #002250;
+  background-color: white;
+  color:black;
+  font-weight: bold;
 }
 
 /* Style the active link, if needed */
@@ -295,6 +315,7 @@ tr:hover {
 
 .dropdown:hover .dropdown-content {
   display: block;
+  
 }
 
 /* Style the "Contact Us" and "Alert" items */
@@ -306,7 +327,7 @@ tr:hover {
 }
 
 .right-items a:hover {
-  background-color: #002250;
+  background-color: white;
 }
 
 /* Apply red CSS to the "Alert" item */
@@ -421,6 +442,20 @@ tr:hover {
   color: #333333;
 }
 
+@media screen and (max-width:1240px){
+  .homepageimage h2{
+    font-size: 30px;
+    width: 200vh;
+    padding-top: 25vh;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-left: 10vh;
+  }
+  .homepageimage{
+    margin-top:-21vh;
+  }
+} 
+
 /* Services CSS */
 
 .Services{
@@ -496,6 +531,17 @@ tr:hover {
   transition: transform 0.3s ease;
 }
 
+@media screen and (max-width:1240px){
+  .Services h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10vh;
+    font-size: 10vh;
+  }
+  
+  
+}
 /* Footer CSS */
 
 /* Footer.css */
@@ -645,6 +691,22 @@ button:hover {
 }
 
 
+/* destination css */
+@media screen and (max-width:1240px){
+  .Destination{
+    margin-top: 80vh;
+  }
+  .Destination p{
+    font-size: 18px;
+
+  }
+  .card{
+    margin-top: -8vh;
+    max-width: 400px;
+  }
+
+  
+}
 /* NFTS MARKETPLACE */
 
 /* App.css */
@@ -817,4 +879,36 @@ h2 {
   background-repeat: no-repeat;
   height: 120vh;
   margin-top: -60vh;
+}
+
+.completesignup{
+  background: url('https://images.unsplash.com/photo-1558980395-2f289089d3ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 120vh;
+  margin-top: -20vh;
+  font-family: 'Poppins';
+}
+
+.signupwrapper{
+  background: white;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  transform: translate(4%,28%);
+  border-radius: 25px;
+  width: 200vh;
+  display: flex;
+  font-family: 'Poppins';
+
+}
+
+.rightwalapart{
+  background: url('https://images.unsplash.com/photo-1558980395-2f289089d3ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 85vh;
+  margin-right: 2vh;
+  border-radius: 20px;
+  width: 180vh;
 }

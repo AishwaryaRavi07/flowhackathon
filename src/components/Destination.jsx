@@ -3,7 +3,7 @@ import React from 'react'
 function Destination() {
   return (
     <>
-    <div style={{fontFamily:"Poppins"}}>
+    <div className="Destination" style={{fontFamily:"Poppins"}}>
     <h2 style={{textAlign:"center",fontSize:"7vh",marginTop:"20vh"}}>Expedition Travel For The Adventurous</h2>
     <p style={{textAlign:"center",width:"100vh",marginLeft:"55vh",marginTop:"5vh",fontSize:"3vh"}}>Embark on a journey to these breathtaking destinations and let your wanderlust come alive. Experience the thrill of exploring vibrant cultures, indulging in exotic cuisines, and immersing yourself in the rich history that each destination has to offer. </p>
     <div className='destimage'>

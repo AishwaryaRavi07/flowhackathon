@@ -34,6 +34,7 @@ function TrainBooking() {
     try {
       const response = await fetch(url, options);
       const result = await response.json();
+      console.log(result)
       setTrainSchedule(result);
       
     } catch (error) {

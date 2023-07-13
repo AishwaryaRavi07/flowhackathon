@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar3';
+import Footer from '../components/Footer'
 import { FaCalendarAlt } from 'react-icons/fa';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -26,6 +27,7 @@ function FlightBooking() {
     try {
       const response = await fetch(url, options);
       const result = await response.json();
+      console.log(result.itineraries)
       if (result.itineraries && result.itineraries.results) {
         setFlightSchedules(result.itineraries.results);
       } else {
@@ -110,6 +112,7 @@ function FlightBooking() {
           </div>
         
       </div>
+      <Footer/>
     </>
   );
 }

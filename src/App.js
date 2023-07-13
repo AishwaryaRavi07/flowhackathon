@@ -8,6 +8,8 @@ import PaymentNFT from './webpages/PaymentNFT';
 import FlightBooking from './webpages/FlightBooking';
 import BookYourTicket from './webpages/BookYourTicket';
 import BookYourFlight from './webpages/BookYourFlight';
+import Signup from './webpages/Signup';
+import Signin from './webpages/Signin';
 
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
     <>
     <Routes>
       <Route path="/" element={<Homepage/>}/>
+      <Route path="/signup" element={<Signup/>}/>
+      <Route path="/signin" element={<Signin/>}/>
       <Route path='/trainbook' element={<TrainBooking/>}/>
       <Route path='/railways' element={<BookYourTicket/>}/>
       <Route path='/flightbook' element={<FlightBooking/>}/>
