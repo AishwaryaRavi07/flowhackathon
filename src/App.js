@@ -10,6 +10,7 @@ import BookYourTicket from './webpages/BookYourTicket';
 import BookYourFlight from './webpages/BookYourFlight';
 import Signup from './webpages/Signup';
 import Signin from './webpages/Signin';
+import SeatLayout from './webpages/SeatLayout'
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <Route path='/railways' element={<BookYourTicket/>}/>
       <Route path='/flightbook' element={<FlightBooking/>}/>
       <Route path='/airways' element={<BookYourFlight/>}/>
+      <Route path='/bookseats' element={<SeatLayout/>}/>
       <Route path='/payment' element={<PaymentNFT/>}/>
     </Routes>
     

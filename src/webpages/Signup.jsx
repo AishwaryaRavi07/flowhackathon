@@ -29,7 +29,7 @@ function Signup() {
         <div className='signupwrapper' >
             <div className='leftwalapart' style={{width:"90vh"}}>
                 <h2 style={{textAlign:"center",fontSize:"30px"}}>TravToken: This is where Incredible Journey Starts </h2>
-            <form style={{ marginTop: "6vh",marginLeft:"50px" }} onSubmit={handleSubmit}>
+            <form style={{ marginTop: "4vh",marginLeft:"50px" }} onSubmit={handleSubmit}>
     <table>
       <tbody>
       <tr>

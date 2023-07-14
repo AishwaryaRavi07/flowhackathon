@@ -14,12 +14,29 @@ function FlightBooking() {
   const [destination, setDestination] = useState('');
   const [date, setDate] = useState('');
 
+  function formatDate(date) {
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+
+    return `${year}-${month}-${day}`;
+  }
+
+  function handleDateChange(date) {
+    const formattedDate = formatDate(date);
+    setDate(date);
+    console.log(formattedDate); 
+   
+  }
+  
+
+
   const AirAPI = async () => {
-    const url = `https://skyscanner44.p.rapidapi.com/search-extended?adults=1&origin=${source}&destination=${destination}&departureDate=2023-07-12&startFrom=00%3A00&arriveTo=23%3A59&returnStartFrom=00%3A00&returnArriveTo=23%3A59`;
+    const url = `https://skyscanner44.p.rapidapi.com/search-extended?adults=1&origin=${source}&destination=${destination}&departureDate=2023-07-23`;
     const options = {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': 'e7d7614529mshf3b0e6977befcc6p13700fjsn7c359e421cda',
+        'X-RapidAPI-Key': '33939205a2msh42c870be6be2d70p1aabc5jsnee15fcc24dc5',
         'X-RapidAPI-Host': 'skyscanner44.p.rapidapi.com',
       },
     };
@@ -67,13 +84,22 @@ function FlightBooking() {
           </div>
           <div>
             <FaCalendarAlt style={{ fontSize: "30px", color: "#003580", marginBottom: "-10px", marginRight: "5px" }} />Journey Date:
-            <input
+            <DatePicker
+            selected={date}
+            onChange={handleDateChange}
+            placeholderText="Date of Travel"
+            dateFormat="yyyy-MM-dd" // Set the desired format here
+          />
+            
+            
+            {/* <input
               type="date"
               
               placeholder="Date of Travel"
               value={date}
+
               onChange={(e) => setDate(e.target.value)}
-            />
+            /> */}
           </div>
         </div>
         <button style={{marginTop:"5vh"}} onClick={AirAPI}>Search</button>

@@ -912,3 +912,81 @@ h2 {
   border-radius: 20px;
   width: 180vh;
 }
+
+/* Seat */
+.seat-layout {
+  text-align: center;
+  font-family: 'Poppins';
+  margin: 20px;
+  background: url('https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 120vh;
+  
+}
+
+.seat-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 340px;
+  padding: 10px 10px;
+  margin-top:1vh;
+  margin-left: 5vh;
+  text-align: center;
+  border: 2px solid black;
+}
+
+.seat {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  text-align: center;
+  padding-left: 11px;
+  margin-bottom: 10px;
+  border: none;
+  background-color: #003580;
+  color:white;
+  cursor: pointer;
+}
+
+.seat.selected {
+  background-color: #ffd700;
+}
+
+.seat.booked {
+  background-color: #999999;
+  color: black;
+  cursor: not-allowed;
+}
+
+.book-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #003580;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.book-button:hover {
+  background-color: #002250;
+}
+
+.aircraft-container {
+  position: relative;
+  width: 400px;
+  height: 700px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  margin-left: 540px;
+}
+
+
+
+
+
+
+
