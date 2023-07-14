@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import FclTest from './components/javascripts/fclTest';
+import CreateProfile from './components/javascripts/createProfile';
 
 function App() {
   return (
-    <div className="App">
-      <FclTest></FclTest>
+    <div className="App"> 
+    <CreateProfile></CreateProfile>  
     </div>
   );
 }

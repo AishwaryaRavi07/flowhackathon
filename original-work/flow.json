@@ -1,0 +1,25 @@
+{
+	"contracts": {
+		"NFTMarketplace": "src/components/contracts/NFTMarketplace.cdc",
+		"NFTravel": "src/components/contracts/NFTravel.cdc"
+	},
+	"networks": {
+		"emulator": "127.0.0.1:3569",
+		"mainnet": "access.mainnet.nodes.onflow.org:9000",
+		"sandboxnet": "access.sandboxnet.nodes.onflow.org:9000",
+		"testnet": "access.devnet.nodes.onflow.org:9000"
+	},
+	"accounts": {
+		"emulator-account": {
+			"address": "f8d6e0586b0a20c7",
+			"key": "718467df1d6118fdd417ad01eca7dfb270d2e242fcf4d45f0eff8be0c7c55b0f"
+		},
+		"unmani-shinde": {
+			"address": "2003435419cf0c8c",
+			"key": {
+				"type": "file",
+				"location": "unmani-shinde.pkey"
+			}
+		}
+	}
+}
