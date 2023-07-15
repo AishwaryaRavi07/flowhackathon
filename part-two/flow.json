@@ -1,8 +1,4 @@
 {
-	"contracts": {
-		"NFTMarketplace": "src/components/cadence/contracts/NFTMarketplace.cdc",
-		"NFTravel": "src/components/cadence/contracts/NFTravel.cdc"
-	},
 	"networks": {
 		"emulator": "127.0.0.1:3569",
 		"mainnet": "access.mainnet.nodes.onflow.org:9000",
@@ -10,13 +6,6 @@
 		"testnet": "access.devnet.nodes.onflow.org:9000"
 	},
 	"accounts": {
-		"cadence-solidity": {
-			"address": "a996ba2ffcc90f26",
-			"key": {
-				"type": "file",
-				"location": "cadence-solidity.pkey"
-			}
-		},
 		"emulator-account": {
 			"address": "f8d6e0586b0a20c7",
 			"key": "137a0cb92fdb2077948caa9222dec0a8044590252c0744b7f1417e72a3ec6851"

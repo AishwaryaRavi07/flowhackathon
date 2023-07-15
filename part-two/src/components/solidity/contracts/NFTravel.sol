@@ -5,59 +5,34 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract NFTravel is Ownable {
 
-        struct Ticket {
-            uint256 ticketNumber;
-            string ticketSource;
-            string ticketDestination;
-            string ticketDate;
-            string ticketTime;
-            string[] ticketOwnershipHistory;
-            bool isTicketAvailable;
-            bool isTicketForSale;
-            uint256 salePrice;
-        }
+    struct Ticket {
+        uint256 ticketNumber;
+        string ticketSource;
+        string ticketDestination;
+        string ticketDate;
+        string ticketTime;
+        string[] ticketOwnershipHistory;
+        bool isTicketAvailable;
+        bool isTicketForSale;
+        uint256 salePrice;
+    }
 
-        mapping (uint256 => Ticket) public AllTickets;
-        mapping (string=>Person) public People;
+    mapping (uint256 => Ticket) public AllTickets;
+    mapping (string=>Person) public People;
 
-        uint256[] public TicketsForSale;
+    uint256[] public TicketsForSale;
 
-        uint256 public numTickets = 0;
-        uint256 public numPeople = 0;
+    uint256 public numTickets = 0;
 
-        event TicketCreated(uint256 id);
-        event PersonCreated(string flowaddr);
+    event TicketCreated(uint256 id);
 
-        struct Person {
-            uint256 personID;
-            string personName;
-            string personEMail;
-            string personPFPHash;
-            string DOJ;
-            string personFlowAddress;
-            uint256[] personOwnedCollection;
-        }
+    struct Person {
+        uint256 personID;
+        string personFlowAddress;
+        uint256[] personOwnedCollection;
+    }
 
-        function createPerson(string memory name,string memory email, string memory hash, string memory doj, string memory flowaddr)public {
-            
-            numPeople++;
-
-            Person memory newPerson = Person({
-                personID:numPeople,
-                personName:name,
-                personEMail:email,
-                personPFPHash:hash,
-                DOJ: doj,
-                personFlowAddress: flowaddr,
-                personOwnedCollection: new uint256[](0)
-            });
-            People[flowaddr]=newPerson;
-
-            emit PersonCreated(flowaddr);
-
-        }
-
-        function CreateTicket(string memory source, string memory destination, string memory date, string memory time, string memory owneraddress) public {
+       function CreateTicket(string memory source, string memory destination, string memory date, string memory time, string memory owneraddress) public {
             Ticket memory newTicket = Ticket({
             ticketNumber: numTickets,
             ticketSource: source,
@@ -77,14 +52,6 @@ contract NFTravel is Ownable {
             numTickets++;
         }
 
-        function getNumTickets()public view returns (uint256){
-            return numTickets;
-        }
-
-        function getNumPeople() public view returns (uint256){
-            return numPeople;
-        }
-
 
 
         function GetTicketDetails(uint256 id) public view returns(uint256,string memory,string memory,string memory,string memory,string[] memory,bool,bool,uint256){
@@ -93,9 +60,9 @@ contract NFTravel is Ownable {
             
         }
 
-        function GetPersonDetails(string memory addr) public view returns (uint256,string memory, string memory, string memory, string memory,string memory, uint256[] memory){
+        function GetPersonDetails(string memory addr) public view returns (uint256,string memory, uint256[] memory){
             Person memory myPerson = People[addr];
-            return(myPerson.personID,myPerson.personName,myPerson.personEMail,myPerson.personPFPHash,myPerson.DOJ,myPerson.personFlowAddress,myPerson.personOwnedCollection);
+            return(myPerson.personID,myPerson.personFlowAddress,myPerson.personOwnedCollection);
 
         }
 
@@ -152,17 +119,17 @@ contract NFTravel is Ownable {
         }
 
 
-            // function getMyTickets(string addr)public view returns ([Ticket]){
-            //     Person memory person = People[addr];
-            //     uint256 len = person.personOwnedCollection.length;
-            //     Ticket[] myTickets = new Ticket[](0);
-            //     for(let uint256=0;i<len;i++){
+        // function getMyTickets(string addr)public view returns ([Ticket]){
+        //     Person memory person = People[addr];
+        //     uint256 len = person.personOwnedCollection.length;
+        //     Ticket[] myTickets = new Ticket[](0);
+        //     for(let uint256=0;i<len;i++){
 
 
-            //     }
+        //     }
 
 
-            //}
+        //}
 
 
 

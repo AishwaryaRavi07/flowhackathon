@@ -3,39 +3,6 @@
 		"inputs": [
 			{
 				"internalType": "string",
-				"name": "name",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "email",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "hash",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "doj",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "flowaddr",
-				"type": "string"
-			}
-		],
-		"name": "createPerson",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
 				"name": "source",
 				"type": "string"
 			},
@@ -100,19 +67,6 @@
 			}
 		],
 		"name": "OwnershipTransferred",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"internalType": "string",
-				"name": "flowaddr",
-				"type": "string"
-			}
-		],
-		"name": "PersonCreated",
 		"type": "event"
 	},
 	{
@@ -245,32 +199,6 @@
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "getNumPeople",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "getNumTickets",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"inputs": [
 			{
 				"internalType": "string",
@@ -284,26 +212,6 @@
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
 			},
 			{
 				"internalType": "string",
@@ -393,19 +301,6 @@
 	},
 	{
 		"inputs": [],
-		"name": "numPeople",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
 		"name": "numTickets",
 		"outputs": [
 			{
@@ -444,26 +339,6 @@
 				"internalType": "uint256",
 				"name": "personID",
 				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "personName",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "personEMail",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "personPFPHash",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "DOJ",
-				"type": "string"
 			},
 			{
 				"internalType": "string",
