@@ -53,7 +53,7 @@ function TrainBooking() {
     <Navbar/>
     
       <main className="content" style={{textAlign:"center"}}>
-        {/* <section className="services">
+        <section className="services">
           <h2>Our Services</h2>
           <ul>
             <li>Book Train Tickets</li>
@@ -61,7 +61,7 @@ function TrainBooking() {
             <li>Train Schedule</li>
             <li>Seat Availability</li>
           </ul>
-        </section> */}
+        </section>
         <section className="book-trains">
           <h2>Modify Search and Filter</h2>
           <div className="input-group">

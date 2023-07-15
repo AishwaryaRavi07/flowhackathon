@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import moment from 'moment';
 import Navbar from '../components/Navbar3';
 import Footer from '../components/Footer'
 import { FaCalendarAlt } from 'react-icons/fa';
@@ -14,25 +15,9 @@ function FlightBooking() {
   const [destination, setDestination] = useState('');
   const [date, setDate] = useState('');
 
-  function formatDate(date) {
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const year = date.getFullYear();
-
-    return `${year}-${month}-${day}`;
-  }
-
-  function handleDateChange(date) {
-    const formattedDate = formatDate(date);
-    setDate(date);
-    console.log(formattedDate); 
-   
-  }
   
-
-
   const AirAPI = async () => {
-    const url = `https://skyscanner44.p.rapidapi.com/search-extended?adults=1&origin=${source}&destination=${destination}&departureDate=2023-07-23`;
+    const url = `https://skyscanner44.p.rapidapi.com/search-extended?adults=1&origin=${source}&destination=${destination}&departureDate=${date}`;
     const options = {
       method: 'GET',
       headers: {
@@ -44,6 +29,7 @@ function FlightBooking() {
     try {
       const response = await fetch(url, options);
       const result = await response.json();
+      console.log(date)
       console.log(result.itineraries)
       if (result.itineraries && result.itineraries.results) {
         setFlightSchedules(result.itineraries.results);
@@ -84,22 +70,14 @@ function FlightBooking() {
           </div>
           <div>
             <FaCalendarAlt style={{ fontSize: "30px", color: "#003580", marginBottom: "-10px", marginRight: "5px" }} />Journey Date:
-            <DatePicker
-            selected={date}
-            onChange={handleDateChange}
-            placeholderText="Date of Travel"
-            dateFormat="yyyy-MM-dd" // Set the desired format here
-          />
-            
-            
-            {/* <input
+            <input
               type="date"
               
               placeholder="Date of Travel"
               value={date}
 
               onChange={(e) => setDate(e.target.value)}
-            /> */}
+            />
           </div>
         </div>
         <button style={{marginTop:"5vh"}} onClick={AirAPI}>Search</button>
@@ -110,25 +88,25 @@ function FlightBooking() {
               <thead>
                 <tr>
                   <th>Flight Number</th>
+                  <th>Airlines</th>
                   <th>Origin</th>
                   <th>Destination</th>
                   <th>Departure Time (UTC)</th>
                   <th>Arrival Time (UTC)</th>
-                  <th>Duration(in min)</th>
+                  <th>Duration</th>
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody>
-              {flightSchedules
-              
-              .map((schedule) => (
+              {flightSchedules.map((schedule) => (
     <tr key={schedule.id}>
       <td>{schedule.legs[0].segments[0].flightNumber}</td>
-      <td>{schedule.legs[0].origin.name}</td>
-      <td>{schedule.legs[0].destination.name}</td>
-      <td>{schedule.legs[0].departure}</td>
-      <td>{schedule.legs[0].arrival}</td>
-      <td>{schedule.legs[0].durationInMinutes}</td>
+      <td>{schedule.legs[0].carriers.marketing[0].name}</td>
+      <td>{`${schedule.legs[0].origin.name}(${(schedule.legs[0].origin.displayCode)})`}</td>
+      <td>{`${schedule.legs[0].destination.name}(${schedule.legs[0].destination.displayCode})`}</td>
+      <td>{moment(schedule.legs[0].departure).format('lll')}</td>
+      <td>{moment(schedule.legs[0].arrival).format('lll')}</td>
+      <td>{Math.floor(schedule.legs[0].durationInMinutes / 60)}h {schedule.legs[0].durationInMinutes % 60}m</td>
       <td><button style={{backgroundColor:"#003580",color:"white",fontFamily:"poppins",borderRadius:"5px",cursor:"pointer",padding:"10px 20px"}} onClick={()=>navigate('/payment')}>Book Now</button></td>
     </tr>
   ))}

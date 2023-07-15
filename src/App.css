@@ -913,7 +913,33 @@ h2 {
   width: 180vh;
 }
 
+@media screen and (max-width:1240px){
+  .completesignup{
+    height: 160vh;
+
+  }
+  .signupwrapper{
+    margin-top: -30vh;
+    margin-left: 20vh;
+    max-width: 1600vh;
+    height: 122vh;
+  }
+  
+
+
+  .leftwalapart form{
+    margin-right: 40px;
+    font-size: 16px;
+  }
+  
+}
+
 /* Seat */
+.seat-selection-summary {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
 .seat-layout {
   text-align: center;
   font-family: 'Poppins';
@@ -921,7 +947,7 @@ h2 {
   background: url('https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 120vh;
+  height: 130vh;
   
 }
 
@@ -984,8 +1010,125 @@ h2 {
   margin-left: 540px;
 }
 
+.seat-legend {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  
+}
+
+.seat-legend-item {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.seat-color {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  border-radius: 3px;
+}
+
+.seat-color.available {
+  background-color: #003580;
+}
+
+.seat-color.booked {
+  background-color: #999999;
+}
+
+.seat-color.selected {
+  background-color: #ffd700;
+}
 
 
+/* Dashboard */
+
+/* Account Details Styles */
+.account-details {
+  margin-top: 40px;
+}
+
+.account-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.account-menu li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.account-icon {
+  margin-right: 10px;
+}
+
+/* User Dashboard Styles */
+.user-dashboard {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.ticket-wallet {
+  padding: 20px;
+}
+
+.ticket-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+
+.ticket-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ticket-card:hover {
+  background-color: #f5f5f5;
+}
+
+.ticket-card.selected {
+  background-color: #f0f0f0;
+}
+
+.trip-details,
+.boarding-pass,
+.trip-history {
+  padding: 20px;
+}
+
+.trip-history table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.trip-history th,
+.trip-history td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+footer {
+  background-color: #f5f5f5;
+  padding: 20px;
+  text-align: center;
+}
 
 
 

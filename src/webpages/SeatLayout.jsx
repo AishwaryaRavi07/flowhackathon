@@ -40,6 +40,7 @@ const SeatLayout = () => {
   };
 
   return (
+    
     <div className="seat-layout">
     <h2>Select your seat:</h2>
     <div className="aircraft-container">
@@ -55,12 +56,31 @@ const SeatLayout = () => {
         <h3>E</h3>
         <h3>F</h3>
       </div>
+      
       <div className="seat-container">{renderSeats()}</div>
       <div style={{display:"flex",marginLeft:"5vh",gap:"39vh",marginTop:"1vh"}}>
       <div className="washroom-icon left"><FaRestroom size={32}/></div>
       <div className="washroom-icon right"><FaRestroom size={32}/></div>
       </div>
     </div>
+    <div className="seat-legend">
+        <div className="seat-legend-item">
+          <div className="seat-color available" />
+          <span>Available</span>
+        </div>
+        <div className="seat-legend-item">
+          <div className="seat-color booked" />
+          <span>Booked</span>
+        </div>
+        <div className="seat-legend-item">
+          <div className="seat-color selected" />
+          <span>Selected</span>
+        </div>
+      </div>
+    <div className="seat-selection-summary">
+        Selected Seat: {selectedSeat ? `Seat ${selectedSeat}` : 'None'}
+      </div>
+
     <button className="book-button" onClick={handleSeatBook}>
       Book Seat
     </button>
