@@ -7,6 +7,12 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { MdLocationOn } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
+import {IoAirplaneSharp} from 'react-icons/io5'
+import {BsDashLg} from 'react-icons/bs'
+import { IoAirplaneOutline } from 'react-icons/io5';
+import { AiFillClockCircle } from 'react-icons/ai';
+import { BsArrowRightShort } from 'react-icons/bs';
+import { RiFlightTakeoffLine, RiFlightLandLine } from 'react-icons/ri';
 
 function FlightBooking() {
   const navigate=useNavigate();
@@ -85,11 +91,12 @@ function FlightBooking() {
           <div>
             <h2 style={{marginTop:"5vh"}}>Flight Schedules from {source} to {destination}</h2>
             <table>
-              <thead>
+              <thead >
                 <tr>
                   <th>Flight Number</th>
                   <th>Airlines</th>
-                  <th>Origin</th>
+                  <th >Origin</th>
+                  <th></th>
                   <th>Destination</th>
                   <th>Departure Time (UTC)</th>
                   <th>Arrival Time (UTC)</th>
@@ -103,6 +110,7 @@ function FlightBooking() {
       <td>{schedule.legs[0].segments[0].flightNumber}</td>
       <td>{schedule.legs[0].carriers.marketing[0].name}</td>
       <td>{`${schedule.legs[0].origin.name}(${(schedule.legs[0].origin.displayCode)})`}</td>
+      <td>{<BsDashLg size="26px" color="#003580" />} {<IoAirplaneSharp size="26px" color="#003580" />}{<BsDashLg size="26px" color="#003580" />} </td>
       <td>{`${schedule.legs[0].destination.name}(${schedule.legs[0].destination.displayCode})`}</td>
       <td>{moment(schedule.legs[0].departure).format('lll')}</td>
       <td>{moment(schedule.legs[0].arrival).format('lll')}</td>

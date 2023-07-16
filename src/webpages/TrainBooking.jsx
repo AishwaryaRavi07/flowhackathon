@@ -5,6 +5,9 @@ import {FaCalendarAlt} from 'react-icons/fa';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useNavigate } from 'react-router-dom';
+import { IoChevronForwardOutline } from 'react-icons/io5';
+import {TbTrain} from 'react-icons/tb';
+import {BsDashLg} from 'react-icons/bs'
 
 function TrainBooking() {
   const navigate=useNavigate();
@@ -140,8 +143,9 @@ function TrainBooking() {
             <tr>
               <th>Train Number</th>
               <th>Train Name</th>
-              <th>From</th>
-              <th>To</th>
+              <th>Origin</th>
+              <th></th>
+              <th>Destination</th>
               <th>Departure Time</th>
               <th>Arrival Time</th>
               <th>Classes</th>
@@ -154,6 +158,7 @@ function TrainBooking() {
                 <td>{train.train_num}</td>
                 <td>{train.name}</td>
                 <td>{train.train_from}</td>
+                <td>{<BsDashLg size="28px" color="#003580" />} <TbTrain size={28} color='#003580' />{<BsDashLg size="28px" color="#003580" />} </td>
                 <td>{train.train_to}</td>
                 <td>{train.data.departTime}</td>
                 <td>{train.data.arriveTime}</td>
