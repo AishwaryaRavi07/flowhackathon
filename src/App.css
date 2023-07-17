@@ -622,9 +622,9 @@ tr:hover {
 .footer-text p {
   margin: 5px 0;
 }
-button[type='submit']:hover {
+/* button[type='submit']:hover {
   background-color: #434343;
-}
+} */
 
 .footer-links ul li a:hover {
   color: #777;
@@ -636,15 +636,15 @@ input[type='text'] {
   border-radius: 5px;
   margin-right: 10px;
 } */
-
+/* 
 button[type='submit'] {
   padding: 5px 10px;
   border: none;
   border-radius: 5px;
-  background-color: #555;
+  background-color: #003580;
   color: #fff;
   cursor: pointer;
-}
+} */
 
 
 

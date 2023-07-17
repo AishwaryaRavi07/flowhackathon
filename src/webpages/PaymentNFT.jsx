@@ -71,17 +71,13 @@ function PaymentNFT() {
     <>
      <div className="container" style={{fontFamily:"Poppins"}}>
       <header className="header" style={{display:"flex",paddingLeft:"4vh"}}>
-        <PiAirplaneTiltDuotone style={{fontSize:"32px",color:"black"}}/><h2 style={{color:"black"}}>TravToken</h2>
-        <div className="search-bar" style={{marginLeft:"-25vh"}}>
-        <input type='text' placeholder='enter name' onChange={(e)=> setNameOfNFT(e.target.value)} />
-        <button onClick={()=>mint()}>Mint NFT</button>
-          {/* <IoIosSearch className="search-icon" style={{color:"black",fontSize:"25px",transform:"translate(150%,-20%)"}} /> */}
-          {/* <input type="text" style={{textAlign:"center"}} placeholder="Search NFTs, Accounts and Collections" /> */}
-          <div>
-          {/* <button style={{marginLeft:"5vh"}} onClick={()=> logIn()}>Log In</button> */}
-          {/* <p style={{color:"black"}}>User Connected:{user.addr}</p> */}
-          {/* <button style={{marginLeft:"5vh"}} onClick={()=> logOut()}>Log Out</button> */}
-          </div>
+        <PiAirplaneTiltDuotone style={{fontSize:"32px",color:"black",marginTop:"-3vh"}}/><h2 style={{color:"black"}}>TravToken</h2>
+        <div className="search-bar" style={{marginRight:"75vh"}}>
+        
+        
+          <IoIosSearch className="search-icon" style={{color:"black",fontSize:"25px",transform:"translate(150%,-20%)"}} />
+          <input type="text" style={{textAlign:"center"}} placeholder="Search NFTs, Accounts and Collections" />
+         
         </div>
       </header>
       <div style={{display:"flex"}}>
@@ -93,7 +89,7 @@ function PaymentNFT() {
           <li><FaHeart className="menu-icon" /> Favourites</li>
         </ul>
         <div className="account-details">
-          <ul className="account-menu">
+          <ul className="menu">
             <li><FaHome className="account-icon" /> Collections</li>
             <li><AiOutlineWallet className="account-icon" /> Wallet</li>
             <li><AiOutlineLineChart className="account-icon" /> Analytics</li>

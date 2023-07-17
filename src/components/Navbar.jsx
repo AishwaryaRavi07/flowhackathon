@@ -11,6 +11,7 @@ function Navbar() {
           <li><a href="/">Home</a></li>
           <li><a href="#pnr-status">PNR Status</a></li>
           <li><a href="#trains"> Trains</a></li>
+          <li><a href="/airways"> Flights</a></li>
           <li><a href="#services-promotions">Services & Promotions</a></li>
           <li><a href="#irctc-rwallet">IRCTC RWallet</a></li>
         </ul>

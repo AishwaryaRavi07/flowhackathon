@@ -80,7 +80,7 @@ function Signin() {
     <p>Not part of the clan yet?</p>
     <a href='/signin'>SignUp</a><br/>
     </div>
-    <button type="submit" style={{marginTop:"3vh",marginLeft:"15vh"}}onClick={()=>navigate('/trainbook')}>Start Journey</button>
+    <button type="submit" style={{marginTop:"3vh",marginLeft:"15vh"}}onClick={()=>navigate('/railways')}>Start Journey</button>
   </form>
             </div>
             <div className='rightwalapart'>

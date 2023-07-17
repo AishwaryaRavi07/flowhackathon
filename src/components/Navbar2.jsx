@@ -4,8 +4,10 @@ import {AiTwotoneBell} from 'react-icons/ai'
 import "../App.css"
 import {SiYourtraveldottv} from "react-icons/si"
 import {FaFlagUsa} from "react-icons/fa"
+import { useNavigate } from 'react-router-dom';
 
 function Navbar2() {
+  const navigate=useNavigate()
   return (
     <>
     <div className="MyHomepageNavbar">
@@ -23,8 +25,8 @@ function Navbar2() {
         <div className='navbar-right' >
         </div>
         <div style={{marginLeft:"30vh"}}>
-            <button className='button' style={{borderRadius:"10px",width:"15vh"}}>US <FaFlagUsa/> </button>
-            <button className='button'>Get Started</button>
+            <button className='button' style={{borderRadius:"10px",width:"15vh"}} onClick={()=>navigate('/signin')}>US <FaFlagUsa/> </button>
+            <button className='button' onClick={()=>navigate('/signup')}>Get Started</button>
           </div>
         
         

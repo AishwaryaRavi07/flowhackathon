@@ -106,7 +106,7 @@ function Signup() {
     <p>Already a member?</p>
     <a href='/signin'>SignIn</a><br/>
     </div>
-    <button type="submit" style={{marginTop:"3vh",marginLeft:"15vh"}}onClick={()=>navigate('/trainbook')}>Start Journey</button>
+    <button type="submit" style={{marginTop:"3vh",marginLeft:"15vh"}}onClick={()=>navigate('/signin')}>Start Journey</button>
   </form>
             </div>
             <div className='rightwalapart'>
