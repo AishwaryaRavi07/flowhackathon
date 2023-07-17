@@ -2,28 +2,34 @@ import React,{useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import {IoAirplaneSharp} from 'react-icons/io5'
 import {BsDashLg} from 'react-icons/bs'
+import { FaRestroom,FaCoffee } from 'react-icons/fa';
+import {GiCoffeeCup} from 'react-icons/gi'
+
 
 function SeatDisplay({ seatStatus, seatNumber, selectedSeat, onSelectSeat }) {
   // Apply appropriate styling based on seat status
   const getSeatClass = (status) => {
     switch (status) {
-      case 'available':
+      case 'AVAILABLE':
         return 'seat-available';
-      case 'occupied':
+      case 'OCCUPIED':
         return 'seat-occupied';
-      case 'selected':
+      case 'SELECTED':
         return 'seat-selected';
-      case 'booked':
-        return 'seat-booked';
+      
+        case 'BLOCKED':
+        case 'BOOKED':
+          return 'seat-booked';
+
       default:
         return 'seat';
     }
   };
 
   const handleClick = () => {
-    
+    if (seatStatus === 'AVAILABLE') {
       onSelectSeat(seatNumber);
-    
+    }
   };
 
     return (
@@ -67,7 +73,7 @@ function SeatMapDisplay() {
     }
   };
     function fetchFlightData(){
-      const accessToken='dGwFGGiGEUtk6tTn5HuPQT43GYj0'
+      const accessToken='X1S7nyMBXiayS1AEIcnrpp6wnIPS'
       const departureDate = '2023-11-01';
       const returnDate = '2023-12-01';
       const adults = 1;
@@ -89,6 +95,7 @@ function SeatMapDisplay() {
 
           setTimeout(() => {
             console.log(flightData); 
+            
           }, delay);
           
           
@@ -101,7 +108,7 @@ function SeatMapDisplay() {
     }
 
     function fetchSeatMaps() {
-        const accessToken = 'dGwFGGiGEUtk6tTn5HuPQT43GYj0';
+        const accessToken = 'X1S7nyMBXiayS1AEIcnrpp6wnIPS';
 
       
         fetch('https://test.api.amadeus.com/v1/shopping/seatmaps', {
@@ -117,6 +124,7 @@ function SeatMapDisplay() {
             console.log(data.data); 
             setSeats(data.data)
             setSeatMapData(data.data);
+            console.log(data.data[0].decks[0].seats[0].travelerPricing[0].seatAvailabilityStatus)
           })
           .catch(error => {
             console.error(error);
@@ -128,10 +136,11 @@ function SeatMapDisplay() {
   return (
     <>
     
-      <div style={{ textAlign: "center", marginTop: "10vh" }}>
+    
+      <div style={{ textAlign: "center", marginTop: "10vh",fontFamily:"Poppins" }}>
         <h2>Taking Flight Offer Data</h2>
-        <div>
-          <div>
+        <div >
+          <div style={{marginLeft:"1vh",gap:"2rem"}}>
             <input
               type="text"
               placeholder="Enter your Source"
@@ -157,13 +166,31 @@ function SeatMapDisplay() {
             Show available seats
           </button>
         </div>
-
+       
         <div>
           <h2>Seat Map</h2>
           <button className="book-button" onClick={handleSeatBook}>
       Book Seat
     </button>
+    <div className="seat-legend">
+        <div className="seat-legend-item">
+          <div className="seat-color available" />
+          <span>Available</span>
+        </div>
+        <div className="seat-legend-item">
+          <div className="seat-color booked" />
+          <span>Booked</span>
+        </div>
+        <div className="seat-legend-item">
+          <div className="seat-color selected" />
+          <span>Selected</span>
+        </div>
+      </div>
+      <div className="seat-selection-summary">
+        Selected Seat: {selectedSeat ? `Seat ${selectedSeat}` : 'None'}
+      </div>
           {seatMapData.map((seatMap, index) => (
+            seatMap.aircraft.code === '320' && (
             <div key={index}>
               <h3>Aircraft: {seatMap.aircraft.code}</h3>
               {seatMap.decks.map((deck, deckIndex) => (
@@ -183,6 +210,7 @@ function SeatMapDisplay() {
                 </div>
               ))}
             </div>
+            )
           ))}
         </div>
       </div>
