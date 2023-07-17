@@ -12,6 +12,7 @@ import Signup from './webpages/Signup';
 import Signin from './webpages/Signin';
 import SeatLayout from './webpages/SeatLayout'
 import UserDashboard from './webpages/Dashboard';
+import SeatMapDisplay from './webpages/SeatMapDisplay';
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
       <Route path='/railways' element={<BookYourTicket/>}/>
       <Route path='/flightbook' element={<FlightBooking/>}/>
       <Route path='/airways' element={<BookYourFlight/>}/>
-      <Route path='/bookseats' element={<SeatLayout/>}/>
+      <Route path='/bookseats' element={<SeatMapDisplay/>}/>
       <Route path='/payment' element={<PaymentNFT/>}/>
       <Route path='/dashboard' element={<UserDashboard/>}/>
     </Routes>
