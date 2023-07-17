@@ -54,6 +54,7 @@ function SeatMapDisplay() {
   const [seatMapData, setSeatMapData] = useState([]);
   const [selectedSeat, setSelectedSeat] = useState('');
   const [seats, setSeats] = useState([]);
+  const [bookedSeats, setBookedSeats] = useState([]);
 
   const handleSelectSeat = (seatNumber) => {
     setSelectedSeat(seatNumber);
@@ -63,17 +64,38 @@ function SeatMapDisplay() {
     if (selectedSeat) {
       alert(`Seat ${selectedSeat} booked successfully!`);
 
-       // Update the status of the selected seat
-    const updatedSeats = seats.map((seat) =>
-    seat.number === selectedSeat ? { ...seat, status: 'booked' } : seat
-  );
-  console.log(updatedSeats)
-      setSeats(updatedSeats);
+      
+    // Update the status of the selected seat
+    const updatedSeats = seatMapData.map((seatMap) => {
+      return {
+        ...seatMap,
+        decks: seatMap.decks.map((deck) => {
+          return {
+            ...deck,
+            seats: deck.seats.map((seat) => {
+              if (seat.number === selectedSeat) {
+                return {
+                  ...seat,
+                  travelerPricing: [
+                    {
+                      ...seat.travelerPricing[0],
+                      seatAvailabilityStatus: 'BOOKED',
+                    },
+                  ],
+                };
+              }
+              return seat;
+            }),
+          };
+        }),
+      };
+    });
+    setSeatMapData(updatedSeats);
       setSelectedSeat(null);
     }
   };
     function fetchFlightData(){
-      const accessToken='X1S7nyMBXiayS1AEIcnrpp6wnIPS'
+      const accessToken='rMlfBvGNGTQUPAkwc4GoAqE9qVDf'
       const departureDate = '2023-11-01';
       const returnDate = '2023-12-01';
       const adults = 1;
@@ -108,7 +130,7 @@ function SeatMapDisplay() {
     }
 
     function fetchSeatMaps() {
-        const accessToken = 'X1S7nyMBXiayS1AEIcnrpp6wnIPS';
+        const accessToken = 'rMlfBvGNGTQUPAkwc4GoAqE9qVDf';
 
       
         fetch('https://test.api.amadeus.com/v1/shopping/seatmaps', {
@@ -135,31 +157,37 @@ function SeatMapDisplay() {
 
   return (
     <>
+       
     
-    
-      <div style={{ textAlign: "center", marginTop: "10vh",fontFamily:"Poppins" }}>
-        <h2>Taking Flight Offer Data</h2>
+      <div style={{ textAlign: "center", marginTop: "5vh",fontFamily:"Poppins" }}>
+      <button style={{marginLeft:"180vh"}} onClick={()=>navigate('/payment')}>Proceed to Payment</button>
+        <h1 style={{marginBottom:"7vh"}}>Our Flights</h1>
+        
+        
         <div >
-          <div style={{marginLeft:"1vh",gap:"2rem"}}>
-            <input
+          <div style={{marginLeft:"14vh",gap:"20rem"}}>
+            <label>Departure: </label>
+            <input style={{marginRight:"5vh"}}
               type="text"
               placeholder="Enter your Source"
               value={source}
               onChange={(e) => setSource(e.target.value)}
             />
-            <input
+            <label>Arrival: </label>
+            <input style={{marginRight:"5vh"}}
               type="text"
               placeholder="Enter your Destination"
               value={destination}
               onChange={(e) => setDestination(e.target.value)}
             />
-            <input
+            <label >Journey Date: </label>
+            <input style={{marginRight:"5vh"}}
               type="date"
               placeholder="Date of Travel"
               value={date}
               onChange={(e) => setDate(e.target.value)}
             />
-            <button onClick={fetchFlightData}>Lock Flights</button>
+            <button onClick={fetchFlightData}>Lock Flight Details</button>
           </div>
 
           <button style={{ marginTop: "5vh" }} onClick={fetchSeatMaps}>
@@ -167,8 +195,8 @@ function SeatMapDisplay() {
           </button>
         </div>
        
-        <div>
-          <h2>Seat Map</h2>
+        <div style={{marginTop:"5vh"}}>
+          <h2>Please select a seat from the available options for your journey.</h2>
           <button className="book-button" onClick={handleSeatBook}>
       Book Seat
     </button>

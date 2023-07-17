@@ -115,7 +115,7 @@ function FlightBooking() {
       <td>{moment(schedule.legs[0].departure).format('lll')}</td>
       <td>{moment(schedule.legs[0].arrival).format('lll')}</td>
       <td>{Math.floor(schedule.legs[0].durationInMinutes / 60)}h {schedule.legs[0].durationInMinutes % 60}m</td>
-      <td><button style={{backgroundColor:"#003580",color:"white",fontFamily:"poppins",borderRadius:"5px",cursor:"pointer",padding:"10px 20px"}} onClick={()=>navigate('/payment')}>Book Now</button></td>
+      <td><button style={{backgroundColor:"#003580",color:"white",fontFamily:"poppins",borderRadius:"5px",cursor:"pointer",padding:"10px 20px"}} onClick={()=>navigate('/bookseats')}>Book Now</button></td>
     </tr>
   ))}
                 
