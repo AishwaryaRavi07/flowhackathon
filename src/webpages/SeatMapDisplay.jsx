@@ -3,6 +3,42 @@ import { useNavigate } from 'react-router-dom';
 import {IoAirplaneSharp} from 'react-icons/io5'
 import {BsDashLg} from 'react-icons/bs'
 
+function SeatDisplay({ seatStatus, seatNumber, selectedSeat, onSelectSeat }) {
+  // Apply appropriate styling based on seat status
+  const getSeatClass = (status) => {
+    switch (status) {
+      case 'available':
+        return 'seat-available';
+      case 'occupied':
+        return 'seat-occupied';
+      case 'selected':
+        return 'seat-selected';
+      case 'booked':
+        return 'seat-booked';
+      default:
+        return 'seat';
+    }
+  };
+
+  const handleClick = () => {
+    
+      onSelectSeat(seatNumber);
+    
+  };
+
+    return (
+      <div
+      className={`seat ${getSeatClass(seatStatus)} ${
+        selectedSeat === seatNumber ? 'seat-selected' : ''
+      }`}
+      onClick={handleClick}
+    >
+      {seatNumber}
+    </div>
+    )
+  
+}
+
 function SeatMapDisplay() {
   const [flightData, setFlightData] = useState([]);
   const [source, setSource] = useState('');
@@ -10,9 +46,28 @@ function SeatMapDisplay() {
   const [date, setDate] = useState('');
   const navigate=useNavigate();
   const [seatMapData, setSeatMapData] = useState([]);
+  const [selectedSeat, setSelectedSeat] = useState('');
+  const [seats, setSeats] = useState([]);
 
+  const handleSelectSeat = (seatNumber) => {
+    setSelectedSeat(seatNumber);
+  };
+
+  const handleSeatBook = () => {
+    if (selectedSeat) {
+      alert(`Seat ${selectedSeat} booked successfully!`);
+
+       // Update the status of the selected seat
+    const updatedSeats = seats.map((seat) =>
+    seat.number === selectedSeat ? { ...seat, status: 'booked' } : seat
+  );
+  console.log(updatedSeats)
+      setSeats(updatedSeats);
+      setSelectedSeat(null);
+    }
+  };
     function fetchFlightData(){
-      const accessToken='ZSCRnnidlGHW5AGbBypzxXIC5XCh'
+      const accessToken='dGwFGGiGEUtk6tTn5HuPQT43GYj0'
       const departureDate = '2023-11-01';
       const returnDate = '2023-12-01';
       const adults = 1;
@@ -46,7 +101,7 @@ function SeatMapDisplay() {
     }
 
     function fetchSeatMaps() {
-        const accessToken = 'ZSCRnnidlGHW5AGbBypzxXIC5XCh';
+        const accessToken = 'dGwFGGiGEUtk6tTn5HuPQT43GYj0';
 
       
         fetch('https://test.api.amadeus.com/v1/shopping/seatmaps', {
@@ -60,6 +115,7 @@ function SeatMapDisplay() {
           .then(response => response.json())
           .then(data => {
             console.log(data.data); 
+            setSeats(data.data)
             setSeatMapData(data.data);
           })
           .catch(error => {
@@ -104,30 +160,26 @@ function SeatMapDisplay() {
 
         <div>
           <h2>Seat Map</h2>
+          <button className="book-button" onClick={handleSeatBook}>
+      Book Seat
+    </button>
           {seatMapData.map((seatMap, index) => (
             <div key={index}>
               <h3>Aircraft: {seatMap.aircraft.code}</h3>
               {seatMap.decks.map((deck, deckIndex) => (
                 <div key={deckIndex}>
                   <h4>Deck Type: {deck.deckType}</h4>
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Seat Number</th>
-                        <th>Cabin</th>
-                        <th>Characteristics Codes</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {deck.seats.map((seat, seatIndex) => (
-                        <tr key={seatIndex}>
-                          <td>{seat.number}</td>
-                          <td>{seat.cabin}</td>
-                          <td>{seat.characteristicsCodes.join(", ")}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                  <div className="seat-map">
+                    {deck.seats.map((seat, seatIndex) => (
+                      <SeatDisplay
+                        key={seatIndex}
+                        seatStatus={seat.travelerPricing[0].seatAvailabilityStatus}
+                        seatNumber={seat.number}
+                        selectedSeat={selectedSeat}
+                        onSelectSeat={handleSelectSeat}
+                      />
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>

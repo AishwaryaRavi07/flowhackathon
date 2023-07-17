@@ -1002,12 +1002,12 @@ h2 {
 }
 
 /* Seat */
-.seat-selection-summary {
+/* .seat-selection-summary {
   margin-top: 10px;
   font-weight: bold;
-}
+} */
 
-.seat-layout {
+/* .seat-layout {
   text-align: center;
   font-family: 'Poppins';
   margin: 20px;
@@ -1016,9 +1016,9 @@ h2 {
   background-size: cover;
   height: 130vh;
   
-}
+} */
 
-.seat-container {
+/* .seat-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -1028,7 +1028,7 @@ h2 {
   margin-left: 5vh;
   text-align: center;
   border: 2px solid black;
-}
+} */
 
 .seat {
   width: 40px;
@@ -1043,28 +1043,28 @@ h2 {
   cursor: pointer;
 }
 
-.seat.selected {
+/* .seat.selected {
   background-color: #ffd700;
-}
+} */
 
-.seat.booked {
+/* .seat.booked {
   background-color: #999999;
   color: black;
   cursor: not-allowed;
-}
+} */
 
-.book-button {
+/* .book-button {
   margin-top: 20px;
   padding: 10px 20px;
   background-color: #003580;
   color: white;
   border: none;
   cursor: pointer;
-}
+} */
 
-.book-button:hover {
+/* .book-button:hover {
   background-color: #002250;
-}
+} */
 
 .aircraft-container {
   position: relative;
@@ -1076,7 +1076,7 @@ h2 {
   text-align: center;
   margin-left: 540px;
 }
-
+/* 
 .seat-legend {
   display: flex;
   justify-content: center;
@@ -1107,7 +1107,7 @@ h2 {
 
 .seat-color.selected {
   background-color: #ffd700;
-}
+} */
 
 
 /* Dashboard */
@@ -1199,6 +1199,10 @@ footer {
 
 .seat-map {
   margin-top: 20px;
+  max-width: 400px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 80vh;
 }
 
 .seat-map h4 {
@@ -1222,10 +1226,17 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
+  text-align: center;
+  padding-right: 10px;
+  padding-top: 10px;
+  cursor: pointer;
 }
+
 
 .seat-number {
   font-size: 14px;
+  color:black;
   font-weight: bold;
 }
 
@@ -1233,5 +1244,37 @@ footer {
   font-size: 12px;
   color: #888;
 }
+.seat-map {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  color:black;
+}
+
+.seat {
+  width: 40px;
+  height: 40px;
+  background-color: #003580;
+  border: 1px solid gray;
+}
+
+.seat-available {
+  background-color: lightgreen;
+}
+
+.seat-occupied {
+  background-color: lightgray;
+}
+
+.seat-selected {
+  background-color: #ffd700;
+}
+.seat-booked {
+  background-color: gray;
+  color: white;
+}
+/* Add additional CSS styles as needed */
+
 
 
