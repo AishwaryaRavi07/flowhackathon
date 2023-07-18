@@ -38,13 +38,13 @@ Built on **Flow blockchain**, TravToken offers seamless ticketing experiences, e
 ## ✈️: Applications
 TravToken's blockchain-based travel platform, with its NFT marketplace and real-time data integration, can be applied to a wide range of advanced travel-related scenarios:
 
-- **Multi-Modal Travel**: TravToken can be used to facilitate seamless ticketing and transfers across various modes of transportation, such as flights, trains, buses, and even taxis. Users can book and manage their entire travel itinerary within a single platform, combining different modes of transportation for a smooth travel experience.
-- **Travel Packages and Experiences**: The platform can enable travel agencies and companies to create and sell curated travel packages that include flights, accommodations, activities, and unique experiences. These packages can be represented as NFTs, providing customers with a convenient way to purchase and access their entire travel itinerary.
-- **Cruise and Yacht Charters**:TravToken can be extended to cater to the luxury travel market, allowing users to book and manage exclusive cruise or yacht charters. NFTs can represent ownership or access to these high-end experiences, granting users unique privileges and perks during their voyage.
-- **Travel Loyalty Programs**: The platform can integrate with existing travel loyalty programs or create its own loyalty ecosystem using NFTs. Users can earn loyalty points as NFTs for their travel activities, such as booking flights, hotels, or participating in exclusive travel experiences. These loyalty NFTs can be redeemed for discounts, upgrades, or special rewards.
-- **Destination Recommendations and Local Experiences**: The platform can offer personalized destination recommendations based on user preferences and historical data. Users can discover local experiences, restaurants, attractions, and events through the NFT marketplace, providing a unique and immersive travel experience.
-- **Time-Share and Vacation Rentals**: TravToken can be utilized in the time-share and vacation rental industry, where users can buy, sell, or rent out their properties through NFTs. Smart contracts can automate rental agreements, payment processing, and property access, providing a secure and transparent platform for property owners and renters.
-- **Travel Auctions and Bidding**: The NFT marketplace can facilitate travel auctions and bidding, allowing users to bid on exclusive travel opportunities or last-minute deals. NFTs can represent auction bids, and smart contracts can manage the bidding process, ensuring fairness and transparency.
+- **Multi-Modal Travel** : TravToken can be used to facilitate seamless ticketing and transfers across various modes of transportation, such as flights, trains, buses, and even taxis. Users can book and manage their entire travel itinerary within a single platform, combining different modes of transportation for a smooth travel experience.
+- **Travel Packages and Experiences** : The platform can enable travel agencies and companies to create and sell curated travel packages that include flights, accommodations, activities, and unique experiences. These packages can be represented as NFTs, providing customers with a convenient way to purchase and access their entire travel itinerary.
+- **Cruise and Yacht Charters** : TravToken can be extended to cater to the luxury travel market, allowing users to book and manage exclusive cruise or yacht charters. NFTs can represent ownership or access to these high-end experiences, granting users unique privileges and perks during their voyage.
+- **Travel Loyalty Programs** : The platform can integrate with existing travel loyalty programs or create its own loyalty ecosystem using NFTs. Users can earn loyalty points as NFTs for their travel activities, such as booking flights, hotels, or participating in exclusive travel experiences. These loyalty NFTs can be redeemed for discounts, upgrades, or special rewards.
+- **Destination Recommendations and Local Experiences** : The platform can offer personalized destination recommendations based on user preferences and historical data. Users can discover local experiences, restaurants, attractions, and events through the NFT marketplace, providing a unique and immersive travel experience.
+- **Time-Share and Vacation Rentals** : TravToken can be utilized in the time-share and vacation rental industry, where users can buy, sell, or rent out their properties through NFTs. Smart contracts can automate rental agreements, payment processing, and property access, providing a secure and transparent platform for property owners and renters.
+- **Travel Auctions and Bidding** : The NFT marketplace can facilitate travel auctions and bidding, allowing users to bid on exclusive travel opportunities or last-minute deals. NFTs can represent auction bids, and smart contracts can manage the bidding process, ensuring fairness and transparency.
 
 ## :moneybag:Business Vision
 
@@ -75,17 +75,9 @@ As technology advances, we will actively explore and integrate emerging technolo
 
 We are committed to promoting sustainable and responsible travel practices. Our platform will prioritize partnerships with eco-friendly accommodations, transportation providers, and tour operators. Additionally, we will incentivize travelers to choose environmentally conscious options through rewards and discounts, contributing to the preservation of natural and cultural resources.
 
-**7. Global Expansion and Partnerships**
-
-We envision expanding our platform globally, partnering with travel service providers, airlines, hotels, and tourism boards worldwide. By creating a robust network of partners, we aim to offer users a wide range of travel options and seamless connectivity across different regions and destinations.
-
-**8. Continuous Innovation and Adaptation**
-
-In the rapidly evolving travel industry, we will foster a culture of continuous innovation and adaptation. We will closely monitor technological advancements, changing consumer preferences, and market trends to proactively introduce new features and services that meet the evolving needs of travelers and industry stakeholders.
-
-By pursuing this advanced business vision, we aim to transform the way people experience travel, making it more personalized, secure, and efficient while fostering sustainable and responsible practices. TravToken will be at the forefront of driving innovation and positive change in the travel industry.
-
-  ## 💻Usage
+By pursuing business vision, we aim to transform the way people experience travel, making it more personalized, secure, and efficient while fostering sustainable and responsible practices. TravToken will be at the forefront of driving innovation and positive change in the travel industry.
+ 
+## 💻Usage
 
 In the root directory, install all the dependencies of the frontend by running the command:
 ### `npm install`
