@@ -3,30 +3,9 @@
 .App {
   font-family: Poppins, sans-serif;
   text-align: center;
-  width: 100vw;
-}
-/* homepage.css */
-/* Set the color palette for the scrollbar */
-::-webkit-scrollbar {
-  width: 10px; /* Width of the scrollbar */
-}
+  padding: 20px;
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #cfd8dc; /* Light blue background for the scrollbar track */
 }
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #19A7CE; /* Dark blue color for the scrollbar handle */
-  border-radius: 5px; /* Rounded corners for the scrollbar handle */
-}
-
-/* On hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #19A7CE; /* Slightly lighter color on hover */
-}
-
 
 .header {
   background-color: #003580;
@@ -234,15 +213,13 @@ tr:hover {
   padding: 20px;
 }
 
-
-
 @media screen and (max-width:1240px) {
   .navbar-right{
     margin-left: -42vh;
     
   }
   .button{
-    margin-right:-5vh ;
+    margin-right:-15vh ;
   }
   
 }
@@ -427,35 +404,13 @@ tr:hover {
   font-family: 'Poppins',sans-serif;
   color:black;
   font-size: 18px;
-  background-size: auto;
-  width: 100vw;
+  background-position: top center;
+  background-size    : cover;
+  width: 100%;
   height: 100vh;
   margin-top:-11vh;
   background-image: url('https://images.unsplash.com/photo-1502726488490-f99c74217a37?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
 }
-@media screen and (min-width: 1180px) and (max-width: 1190px) {
-  .homefooter{
-    margin-top: -40vh;
-  }
-}
-
-@media screen and (min-width: 1180px) and (max-width: 1190px){
-  .destimage{
-    transform: scale(0.85);
-    margin-left: -12vh;
-  }
-  .Destination {
-    transform: translate(0%,-20%);
-  }
-  .Destination p{
-    font-size: 18px;
-  }
- 
- 
-  
-}
-
-
 
 .homepageimage h2 {
   font-size: 34px;
@@ -723,6 +678,27 @@ button[type='submit'] {
   
   
 }
+@media screen and (min-width: 1180px) and (max-width: 1190px) {
+  .homefooter{
+    margin-top: -40vh;
+  }
+}
+
+@media screen and (min-width: 1180px) and (max-width: 1190px){
+  .destimage{
+    transform: scale(0.85);
+    margin-left: -12vh;
+  }
+  .Destination {
+    transform: translate(0%,-20%);
+  }
+  .Destination p{
+    font-size: 18px;
+  }
+ 
+ 
+  
+}
 
 
 .card-content{
@@ -913,6 +889,29 @@ button:hover {
   margin-left: 20px;
 }
 
+/* homepage.css */
+/* Set the color palette for the scrollbar */
+::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #cfd8dc; /* Light blue background for the scrollbar track */
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #19A7CE; /* Dark blue color for the scrollbar handle */
+    border-radius: 5px; /* Rounded corners for the scrollbar handle */
+  }
+  
+  /* On hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #19A7CE; /* Slightly lighter color on hover */
+  }
+  
+
 .account-menu li {
   display: flex;
   align-items: center;
@@ -987,7 +986,7 @@ h2 {
 }
 
 .airimage{
-  background: url("/src/components/HomePagecomponents/img/airportrunway.jpg");
+  background: url("./img/airportrunway.jpg");
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
